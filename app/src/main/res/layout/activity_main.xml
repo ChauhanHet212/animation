@@ -13,7 +13,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
         android:contentDescription="@string/app_name"
-        android:src="@mipmap/ic_launcher" />
+        android:src="@drawable/shuriken" />
 
     <LinearLayout
         android:id="@+id/linear1"
@@ -25,14 +25,14 @@
         android:weightSum="3">
 
         <Button
-            android:id="@+id/BTNblink"
+            android:id="@+id/BTNanimate"
             style="@style/TextAppearance.AppCompat.Widget.Button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:layout_weight="1"
             android:padding="3dp"
-            android:text="blink"
+            android:text="animate"
             android:textColor="@color/white" />
 
         <Button

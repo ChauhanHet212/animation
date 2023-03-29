@@ -2,6 +2,7 @@ package com.example.animation;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.drawable.AnimatedVectorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
@@ -12,7 +13,7 @@ import android.widget.ImageView;
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-    Button blinkBTN, rotateBTN, fadeBTN, moveBTN, slideBTN, zoomBTN, stopBTN;
+    Button animateBTN, rotateBTN, fadeBTN, moveBTN, slideBTN, zoomBTN, stopBTN;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         imageView = findViewById(R.id.imageview);
-        blinkBTN = findViewById(R.id.BTNblink);
+        animateBTN = findViewById(R.id.BTNanimate);
         rotateBTN = findViewById(R.id.BTNrotate);
         fadeBTN = findViewById(R.id.BTNfade);
         moveBTN = findViewById(R.id.BTNmove);
@@ -28,11 +29,11 @@ public class MainActivity extends AppCompatActivity {
         zoomBTN = findViewById(R.id.BTNzoom);
         stopBTN = findViewById(R.id.BTNstop);
 
-        blinkBTN.setOnClickListener(new View.OnClickListener() {
+        animateBTN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Animation animation = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.blink_animation);
-                imageView.startAnimation(animation);
+                AnimatedVectorDrawable drawable = (AnimatedVectorDrawable) imageView.getDrawable();
+                drawable.start();
             }
         });
 
